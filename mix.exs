@@ -1,7 +1,7 @@
-defmodule NervesSystemRpi3.MixProject do
+defmodule CustomRpi3.MixProject do
   use Mix.Project
 
-  @app :nerves_system_rpi3
+  @app :custom_rpi3
   @version Path.join(__DIR__, "VERSION")
            |> File.read!()
            |> String.trim()
@@ -34,9 +34,9 @@ defmodule NervesSystemRpi3.MixProject do
   defp nerves_package do
     [
       type: :system,
-      artifact_sites: [
-        {:github_releases, "nerves-project/#{@app}"}
-      ],
+      #artifact_sites: [
+      #  {:github_releases, "nerves-project/#{@app}"}
+      #],
       build_runner_opts: build_runner_opts(),
       platform: Nerves.System.BR,
       platform_config: [
@@ -48,7 +48,7 @@ defmodule NervesSystemRpi3.MixProject do
 
   defp deps do
     [
-      {:nerves, "~> 1.3", runtime: false},
+      {:nerves, "~> 1.4.3", runtime: false},
       {:nerves_system_br, "1.7.1", runtime: false},
       {:nerves_toolchain_arm_unknown_linux_gnueabihf, "1.1.0", runtime: false},
       {:nerves_system_linter, "~> 0.3.0", runtime: false},
@@ -64,10 +64,10 @@ defmodule NervesSystemRpi3.MixProject do
 
   defp package do
     [
-      maintainers: ["Frank Hunleth", "Justin Schneck"],
+      maintainers: ["Eric J. Christeson"],
       files: package_files(),
       licenses: ["Apache 2.0"],
-      links: %{"GitHub" => "https://github.com/nerves-project/#{@app}"}
+      links: %{"GitHub" => "https://github.com/ejc123/#{@app}"}
     ]
   end
 
