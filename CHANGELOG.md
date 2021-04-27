@@ -1,18 +1,34 @@
 # Changelog
 
-## v2.0.0-rc.1
+## v1.15.1
 
-Sync with changes up to v1.13.0
+This is a security/bug fix release that updates to Buildroot 2021.02.1 and OTP
+23.3.1. It should be safe for everyone to apply.
 
-## v2.0.0-rc.0
+* Improvements
+  * espeak has been removed from the default install to trim 13 MB off the root
+    filesystem
 
-* New Features
-  * Uses `nerves_initramfs` to support pre-start checks for deciding if a
-    firmware should automatically be reverted before the kernel is loaded.
-    By default, this checks UBoot variable `nerves_fw_validated` and if the
-    firmware has not been validated, a revert will be triggered. This means
-    a user must validate the firmware on first boot via
-    `Nerves.Runtime.validate_firmware/0` or by writing to UBoot directly
+* Updated dependencies
+  * [nerves_system_br v1.15.1](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.15.1)
+  * [Buildroot 2021.02](http://lists.busybox.net/pipermail/buildroot/2021-April/307970.html)
+  * [Erlang/OTP 23.3.1](https://erlang.org/download/OTP-23.3.1.README)
+
+## v1.15.0
+
+This release updates to Buildroot 2021.02 and OTP 23.2.7. If you have made a
+custom system off this one, please review the `nerves_system_br v1.15.0` release
+notes.
+
+The Nerves toolchain has also been updated to v1.4.2. This brings in Linux 4.14
+headers to enable use of cdev and eBPF. This won't affect most users.
+
+* Updated dependencies
+  * [nerves_system_br v1.15.0](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.15.0)
+  * [Buildroot 2021.02](http://lists.busybox.net/pipermail/buildroot/2021-March/305168.html)
+  * [Erlang/OTP 23.2.7](https://erlang.org/download/OTP-23.2.7.README)
+  * [nerves toolchains v1.4.2](https://github.com/nerves-project/toolchains/releases/tag/v1.4.2)
+
 ## v1.14.0
 
 This release updates to Buildroot 2020.11.2, GCC 10.2 and OTP 23.2.4.
