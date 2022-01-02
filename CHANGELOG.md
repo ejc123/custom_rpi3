@@ -5,12 +5,52 @@ follows:
 
 1. Major version updates are breaking updates to the build infrastructure.
    These should be very rare.
-2. Minor version updates are made for every major Buildroot release. Buildroot
-   makes four releases a year. Major Erlang/OTP updates are held off until the
-   next Buildroot release.
-3. Patch version updates are made for Buildroot minor releases and Erlang/OTP
-   minor and patch releases. They're also made to fix bugs and add features to
-   the build infrastructure.
+2. Minor version updates are made for every major Buildroot release. This
+   may also include Erlang/OTP and Linux kernel updates. These are made four
+   times a year shortly after the Buildroot releases.
+3. Patch version updates are made for Buildroot minor releases, Erlang/OTP
+   releases, and Linux kernel updates. They're also made to fix bugs and add
+   features to the build infrastructure.
+
+## v1.18.0
+
+This release updates to Buildroot 2021.11 and OTP 24.2. If you have made a
+custom system, please review the `nerves_system_br` [release
+notes](https://github.com/nerves-project/nerves_system_br/blob/v1.18.2/CHANGELOG.md#v1180)
+since Buildroot 2021.11 changed some Raspberry Pi firmware options.
+
+* Updated dependencies
+  * [nerves_system_br v1.18.2](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.18.2)
+  * [Buildroot 2021.11](http://lists.busybox.net/pipermail/buildroot/2021-December/629911.html)
+  * [Erlang/OTP 24.2](https://erlang.org/download/OTP-24.2.README)
+  * [Raspberry Pi WiFi firmware](https://github.com/RPi-Distro/firmware-nonfree/blob/bullseye/debian/changelog)
+  * Linux 5.10.88 with Raspberry Pi patches
+  * GCC 10.3
+
+* Improvements
+  * Support for the `dl.nerves-project.org` backup site. Due to a GitHub outage
+    in November, there was a 2 day period of failing builds since some packages
+    could not be downloaded. We implemented the backup site to prevent this in
+    the future. This update is in the `nerves_defconfig`.
+  * Use new build ORB on CircleCI. This ORB will shorten build times to fit in
+    CircleCI's new free tier limits. Please update if building your own systems.
+
+## v1.17.4
+
+* Updated dependencies
+  * [nerves_system_br v1.17.4](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.17.4)
+  * [Buildroot 2021.08.2](http://lists.busybox.net/pipermail/buildroot/2021-November/628323.html)
+  * [Erlang/OTP 24.1.7](https://erlang.org/download/OTP-24.1.7.README).
+
+## v1.17.3
+
+This release updates the Linux kernel from 5.4 to 5.10 to follow the Raspberry
+Pi OS.
+
+* Updated dependencies
+  * [nerves_system_br v1.17.3](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.17.3)
+  * [Erlang/OTP 24.1.4](https://erlang.org/download/OTP-24.1.4.README).
+  * Linux 5.10.63 with Raspberry Pi patches
 
 ## v1.17.2
 
