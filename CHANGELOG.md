@@ -12,6 +12,41 @@ follows:
    releases, and Linux kernel updates. They're also made to fix bugs and add
    features to the build infrastructure.
 
+## v1.18.4
+
+This release bumps Erlang to 24.3.2 and should be a low risk upgrade from the
+previous release.
+
+* Changes
+  * Pull in upstream Linux SquashFS patch to improve file system performance
+
+* Updated dependencies
+  * [nerves_system_br v1.18.6](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.18.6)
+
+## v1.18.3
+
+This is a Buildroot and Erlang bug and security fix release. It should be a low
+risk upgrade from the previous release.
+
+* Updated dependencies
+  * [nerves_system_br v1.18.5](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.18.5)
+
+## v1.18.2
+
+This is a Buildroot and Erlang bug fix release. It should be a low risk upgrade
+from the previous release.
+
+* Updated dependencies
+  * [nerves_system_br v1.18.4](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.18.4)
+
+* Changes
+  * Specify CPU-specific flags when compiling NIFs and ports. This fixes an
+    issue where some optimizations could not be enabled in NIFs even though it
+    should be possible to have them. E.g., ARM NEON support for CPUs that have
+    it.
+  * Build the Wireguard kernel driver. This is a small device driver that
+    enables a number of VPN-based use cases.
+
 ## v1.18.1
 
 * Updated dependencies
