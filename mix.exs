@@ -69,9 +69,9 @@ defmodule CustomRpi3.MixProject do
 
   defp deps do
     [
-      {:nerves, "~> 1.5.4 or ~> 1.6.0 or ~> 1.7.15", runtime: false},
-      {:nerves_system_br, "1.18.6", runtime: false},
-      {:nerves_toolchain_armv7_nerves_linux_gnueabihf, "~> 1.5.0", runtime: false},
+      {:nerves, "~> 1.5.4 or ~> 1.6.0 or ~> 1.7.15 or ~> 1.8", runtime: false},
+      {:nerves_system_br, "1.21.4", runtime: false},
+      {:nerves_toolchain_armv7_nerves_linux_gnueabihf, "~> 1.6.0", runtime: false},
       {:nerves_system_linter, "~> 0.4", only: [:dev, :test], runtime: false},
       {:ex_doc, "~> 0.22", only: :docs, runtime: false}
     ]
@@ -113,7 +113,7 @@ defmodule CustomRpi3.MixProject do
       "fwup-revert.conf",
       "fwup.conf",
       "LICENSE",
-      "linux-5.10.defconfig",
+      "linux-5.15.defconfig",
       "mix.exs",
       "nerves_defconfig",
       "nerves_initramfs.conf",
